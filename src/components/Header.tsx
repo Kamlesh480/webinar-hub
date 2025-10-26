@@ -11,10 +11,15 @@ const Header = () => {
       <div className="container mx-auto px-4">
         <div className="flex h-16 items-center justify-between">
           <Link to="/" className="flex items-center space-x-2">
-            <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gradient-to-br from-primary to-secondary">
-              <span className="text-lg font-bold text-primary-foreground">A</span>
-            </div>
-            <span className="text-xl font-bold text-foreground">Atlan</span>
+            <img
+              src="https://website-assets.atlan.com/img/atlan-blue.svg"
+              alt="Atlan Logo"
+              width={80}
+              height={25}
+              loading="eager"
+              fetchPriority="high"
+              style={{ width: '80px', height: '25px' }}
+            />
           </Link>
 
           {/* Desktop Navigation */}

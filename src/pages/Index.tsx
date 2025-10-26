@@ -185,49 +185,6 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-background flex flex-col relative overflow-hidden">
-      {/* Decorative Background Elements - Atlan inspired */}
-      <div className="fixed inset-0 pointer-events-none z-0">
-        {/* Top left corner dots grid */}
-        <div className="absolute left-0 top-32 w-40 h-40 opacity-20">
-          <div className="grid grid-cols-8 gap-3">
-            {Array.from({ length: 32 }).map((_, i) => (
-              <div key={`dot-tl-${i}`} className="w-1.5 h-1.5 rounded-full bg-primary"></div>
-            ))}
-          </div>
-        </div>
-        
-        {/* Top right corner dots grid */}
-        <div className="absolute right-0 top-32 w-40 h-40 opacity-20">
-          <div className="grid grid-cols-8 gap-3">
-            {Array.from({ length: 32 }).map((_, i) => (
-              <div key={`dot-tr-${i}`} className="w-1.5 h-1.5 rounded-full bg-secondary"></div>
-            ))}
-          </div>
-        </div>
-        
-        {/* Bottom left dots */}
-        <div className="absolute left-0 bottom-32 w-32 h-32 opacity-20">
-          <div className="grid grid-cols-6 gap-3">
-            {Array.from({ length: 24 }).map((_, i) => (
-              <div key={`dot-bl-${i}`} className="w-1.5 h-1.5 rounded-full bg-accent"></div>
-            ))}
-          </div>
-        </div>
-        
-        {/* Curved lines decoration - top right */}
-        <svg className="absolute right-0 top-0 w-[500px] h-[400px] opacity-10" viewBox="0 0 500 400" preserveAspectRatio="none">
-          <path d="M 500 0 Q 400 100 500 200" stroke="hsl(var(--primary))" strokeWidth="3" fill="none" />
-          <path d="M 500 20 Q 400 120 500 220" stroke="hsl(var(--primary))" strokeWidth="3" fill="none" />
-          <path d="M 500 40 Q 400 140 500 240" stroke="hsl(var(--primary))" strokeWidth="3" fill="none" />
-          <path d="M 500 60 Q 400 160 500 260" stroke="hsl(var(--primary))" strokeWidth="3" fill="none" />
-          <path d="M 500 80 Q 400 180 500 280" stroke="hsl(var(--primary))" strokeWidth="3" fill="none" />
-        </svg>
-        
-        {/* Subtle gradient blobs */}
-        <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-primary/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 left-1/4 w-80 h-80 bg-secondary/5 rounded-full blur-3xl"></div>
-      </div>
-
       <Header />
       
       <main className="flex-1 relative z-10">
