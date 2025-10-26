@@ -214,7 +214,7 @@ const Index = () => {
                 <TabsTrigger value="past">Past</TabsTrigger>
               </TabsList>
 
-              <div className="flex items-center space-x-2">
+              {/* <div className="flex items-center space-x-2">
                 <Button
                   variant={viewMode === "grid" ? "default" : "outline"}
                   size="sm"
@@ -229,7 +229,7 @@ const Index = () => {
                 >
                   <List className="h-4 w-4" />
                 </Button>
-              </div>
+              </div> */}
             </div>
 
             <TabsContent value={activeTab} className="space-y-8">

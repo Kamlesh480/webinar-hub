@@ -397,46 +397,6 @@ const SearchAndFilters = ({
         </div>
       </div>
 
-      {/* Mobile: Search + Filter Button */}
-      <div className="flex md:hidden flex-col gap-4">
-        <div className="relative">
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground" />
-          <Input
-            type="text"
-            placeholder="Search webinars by title, topic, or speaker..."
-            value={searchInput}
-            onChange={(e) => setSearchInput(e.target.value)}
-            className="pl-10"
-          />
-        </div>
-
-        {/* Mobile Filter Button */}
-        <Sheet open={mobileFiltersOpen} onOpenChange={setMobileFiltersOpen}>
-          <SheetTrigger asChild>
-            <Button variant="outline" className="relative">
-              <Filter className="h-4 w-4 mr-2" />
-              Filters
-              {activeFilterCount > 0 && (
-                <Badge variant="secondary" className="ml-2">
-                  {activeFilterCount}
-                </Badge>
-              )}
-            </Button>
-          </SheetTrigger>
-          <SheetContent side="right" className="w-80 overflow-y-auto">
-            <SheetHeader>
-              <SheetTitle>Filters</SheetTitle>
-              <SheetDescription>
-                Refine your search results
-              </SheetDescription>
-            </SheetHeader>
-            <div className="mt-6">
-              <FilterContent />
-            </div>
-          </SheetContent>
-        </Sheet>
-      </div>
-
       {/* Active Filters */}
       {activeFilterCount > 0 && (
         <div className="flex flex-wrap items-center gap-2">
