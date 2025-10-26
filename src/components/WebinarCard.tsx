@@ -14,6 +14,11 @@ const WebinarCard = ({ webinar }: WebinarCardProps) => {
   const navigate = useNavigate();
   const [isBookmarked, setIsBookmarked] = useState(false);
 
+  const navigateToDetail = (path: string) => {
+    window.scrollTo(0, 0);
+    navigate(path);
+  };
+
   const handleBookmark = (e: React.MouseEvent) => {
     e.stopPropagation();
     setIsBookmarked(!isBookmarked);
@@ -37,13 +42,14 @@ const WebinarCard = ({ webinar }: WebinarCardProps) => {
 
   const handleWatch = (e: React.MouseEvent) => {
     e.stopPropagation();
+    window.scrollTo(0, 0);
     navigate(`/webinar/${webinar.slug}?scrollToSummary=true`);
   };
 
   return (
     <div
       className="group relative bg-card rounded-xl border border-border overflow-hidden transition-all duration-300 hover:shadow-lg hover:shadow-primary/10 hover:-translate-y-1 cursor-pointer"
-      onClick={() => navigate(`/webinar/${webinar.slug}`)}
+      onClick={() => navigateToDetail(`/webinar/${webinar.slug}`)}
     >
       {/* Thumbnail */}
       <div className="relative aspect-video overflow-hidden bg-muted">
