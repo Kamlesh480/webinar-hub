@@ -68,7 +68,7 @@ const HeroSection = ({ featuredWebinars }: HeroSectionProps) => {
               onClick={() => navigate(`/webinar/${currentWebinar.slug}`)}
             >
               <div className="grid md:grid-cols-2 gap-6 p-6 lg:p-8">
-                <div className="relative rounded-xl overflow-hidden aspect-video">
+                <div className="relative rounded-xl overflow-hidden aspect-video border border-borderGray">
                   <img
                     src={currentWebinar.thumbnail_url}
                     alt={currentWebinar.title}
@@ -93,7 +93,7 @@ const HeroSection = ({ featuredWebinars }: HeroSectionProps) => {
                     ))}
                   </div>
 
-                  <h2 className="text-2xl lg:text-3xl font-bold text-card-foreground">
+                  <h2 className="text-2xl lg:text-[1.75rem] font-bold text-card-foreground">
                     {currentWebinar.title}
                   </h2>
 
