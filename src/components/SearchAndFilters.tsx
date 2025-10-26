@@ -72,6 +72,13 @@ const SearchAndFilters = ({
     onFilterChange({ ...filters, integrations: newIntegrations });
   };
 
+  const toggleCategory = (category: string) => {
+    const newCategories = filters.categories.includes(category)
+      ? filters.categories.filter((c) => c !== category)
+      : [...filters.categories, category];
+    onFilterChange({ ...filters, categories: newCategories });
+  };
+
   const toggleDuration = (duration: string) => {
     const newDurations = filters.durations.includes(duration)
       ? filters.durations.filter((d) => d !== duration)
@@ -95,6 +102,7 @@ const SearchAndFilters = ({
   const activeFilterCount =
     filters.topics.length +
     filters.durations.length +
+    filters.categories.length +
     filters.authors.length +
     filters.integrations.length +
     (filters.dateRange ? 1 : 0) +
@@ -413,6 +421,14 @@ const SearchAndFilters = ({
             <Badge key={topic} variant="secondary" className="gap-1">
               {topic}
               <button onClick={() => toggleTopic(topic)} className="ml-1 hover:bg-muted rounded-full">
+                <X className="h-3 w-3" />
+              </button>
+            </Badge>
+          ))}
+          {filters.categories.map((category) => (
+            <Badge key={category} variant="secondary" className="gap-1">
+              {category}
+              <button onClick={() => toggleCategory(category)} className="ml-1 hover:bg-muted rounded-full">
                 <X className="h-3 w-3" />
               </button>
             </Badge>
