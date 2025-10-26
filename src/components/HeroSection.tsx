@@ -32,7 +32,7 @@ const HeroSection = ({ featuredWebinars }: HeroSectionProps) => {
   const currentWebinar = featuredWebinars[currentIndex];
 
   return (
-    <section className="relative overflow-hidden py-20 lg:py-28">
+    <section className="relative overflow-hidden py-20">
       <div className="absolute w-full left-0 top-0">
         <img
           className="w-full h-auto hidden lg:inline-block"
@@ -40,7 +40,7 @@ const HeroSection = ({ featuredWebinars }: HeroSectionProps) => {
           alt="hero"
         />
         <img
-          className="w-full h-auto inline-block lg:hidden"
+          className="w-full h-[75vh] object-cover inline-block lg:hidden"
           src="https://website-assets.atlan.com/img/events-hero-bg-mobile.svg"
           alt="hero mobile"
         />
