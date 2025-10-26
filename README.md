@@ -126,6 +126,4 @@ npm run dev
 
 - Visit http://localhost:3000 (or the port your dev server reports)
 
-## Notes
-
-- This README is tailored for the current frontend-focused demo. If the project transitions to a Next.js SSR/SSG deployment or adds server-side features (AI generation, authenticated bookmarks), update the docs and add deployment instructions.
+Live link: https://webinar-hub.vercel.app/
