@@ -1,11 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { Webinar } from "@/types/webinar";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Clock, Calendar, Bookmark, Share2, ArrowLeft, Sparkles } from "lucide-react";
+import { Clock, Calendar, Bookmark, Share2, ArrowLeft, Sparkles, RefreshCw } from "lucide-react";
 import { toast } from "sonner";
 import EmailGateModal from "@/components/EmailGateModal";
 import RecommendedWebinars from "@/components/RecommendedWebinars";
@@ -21,6 +21,19 @@ const WebinarDetail = () => {
   const [showEmailGate, setShowEmailGate] = useState(false);
   const [hasAccess, setHasAccess] = useState(false);
   const [isBookmarked, setIsBookmarked] = useState(false);
+  const [isGeneratingAiSummary, setIsGeneratingAiSummary] = useState(false);
+  const [showAiSummary, setShowAiSummary] = useState(false);
+  const summaryRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("scrollToSummary") === "true" && summaryRef.current) {
+      setShowAiSummary(true);
+      setTimeout(() => {
+        summaryRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+      }, 500);
+    }
+  }, [webinar]);
 
   useEffect(() => {
     const loadWebinars = async () => {
@@ -192,16 +205,66 @@ const WebinarDetail = () => {
               </div>
             </div>
 
-            {/* AI Summary - Only for past webinars */}
+            {/* AI Summary Section - Only for past webinars */}
             {webinar.type !== "upcoming" && (
-              <div className="bg-gradient-to-br from-secondary/10 to-primary/10 rounded-xl p-6 border border-primary/20">
-                <div className="flex items-start space-x-3">
-                  <Sparkles className="h-5 w-5 text-secondary flex-shrink-0 mt-1" />
-                  <div>
-                    <h3 className="font-semibold text-foreground mb-2">AI Summary</h3>
-                    <p className="text-muted-foreground">{webinar.ai_summary}</p>
+              <div className="space-y-4" ref={summaryRef}>
+                {!showAiSummary ? (
+                  <Button
+                    className="w-full"
+                    variant="outline"
+                    onClick={() => {
+                      setIsGeneratingAiSummary(true);
+                      // Simulate AI summary generation
+                      setTimeout(() => {
+                        setIsGeneratingAiSummary(false);
+                        setShowAiSummary(true);
+                        toast.success("AI summary generated!");
+                      }, 2000);
+                    }}
+                    disabled={isGeneratingAiSummary}
+                  >
+                    <Sparkles className="h-4 w-4 mr-2" />
+                    {isGeneratingAiSummary ? "Generating AI Summary..." : "Generate AI Summary"}
+                    {isGeneratingAiSummary && (
+                      <RefreshCw className="h-4 w-4 ml-2 animate-spin" />
+                    )}
+                  </Button>
+                ) : (
+                  <div
+                    className="bg-gradient-to-br from-secondary/10 to-primary/10 rounded-xl p-6 border border-primary/20 opacity-0 animate-fade-in"
+                    style={{
+                      animation: 'fadeIn 0.5s ease-out forwards',
+                    }}
+                  >
+                    <div className="flex items-start justify-between">
+                      <div className="flex items-start space-x-3">
+                        <Sparkles className="h-5 w-5 text-secondary flex-shrink-0 mt-1" />
+                        <div>
+                          <h3 className="font-semibold text-foreground mb-2">AI Summary</h3>
+                          <p className="text-muted-foreground">{webinar.ai_summary}</p>
+                        </div>
+                      </div>
+                      <Button
+                        variant="ghost"
+                        size="sm"
+                        onClick={() => {
+                          setIsGeneratingAiSummary(true);
+                          // Simulate AI summary regeneration
+                          setTimeout(() => {
+                            toast.success("AI summary updated!");
+                            setIsGeneratingAiSummary(false);
+                          }, 2000);
+                        }}
+                        disabled={isGeneratingAiSummary}
+                        title="Regenerate AI summary"
+                      >
+                        <RefreshCw 
+                          className={`h-4 w-4 ${isGeneratingAiSummary ? 'animate-spin' : ''}`}
+                        />
+                      </Button>
+                    </div>
                   </div>
-                </div>
+                )}
               </div>
             )}
 

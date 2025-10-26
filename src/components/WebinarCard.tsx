@@ -37,7 +37,7 @@ const WebinarCard = ({ webinar }: WebinarCardProps) => {
 
   const handleWatch = (e: React.MouseEvent) => {
     e.stopPropagation();
-    navigate(`/webinar/${webinar.slug}`);
+    navigate(`/webinar/${webinar.slug}?scrollToSummary=true`);
   };
 
   return (
@@ -114,13 +114,10 @@ const WebinarCard = ({ webinar }: WebinarCardProps) => {
           {webinar.title}
         </h3>
 
-        {/* AI Summary */}
-        <div className="flex items-start space-x-2 bg-muted/50 rounded-lg p-3">
-          <Sparkles className="h-4 w-4 text-secondary flex-shrink-0 mt-0.5" />
-          <p className="text-sm text-muted-foreground line-clamp-2">
-            {webinar.ai_summary}
-          </p>
-        </div>
+        {/* Description */}
+        <p className="text-sm text-muted-foreground line-clamp-3">
+          {webinar.description}
+        </p>
 
         {/* Topics */}
         <div className="flex flex-wrap gap-2">
