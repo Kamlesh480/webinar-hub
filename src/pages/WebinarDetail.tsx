@@ -25,8 +25,17 @@ const WebinarDetail = () => {
   useEffect(() => {
     const loadWebinars = async () => {
       try {
-        const response = await fetch("/data/webinars.json");
-        const data = await response.json();
+        const spaceId = import.meta.env.VITE_CONTENTFUL_SPACE_ID;
+        const deliveryToken = import.meta.env.VITE_CONTENTFUL_DELIVERY_TOKEN;
+        let data: Webinar[] = [];
+        if (spaceId && deliveryToken) {
+          const mod = await import("@/lib/contentful");
+          data = await mod.fetchContentfulWebinars();
+        } else {
+          const response = await fetch("/data/webinars.json");
+          data = await response.json();
+        }
+
         setAllWebinars(data);
         const found = data.find((w: Webinar) => w.slug === slug);
         setWebinar(found || null);
