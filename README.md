@@ -129,10 +129,3 @@ npm run dev
 ## Notes
 
 - This README is tailored for the current frontend-focused demo. If the project transitions to a Next.js SSR/SSG deployment or adds server-side features (AI generation, authenticated bookmarks), update the docs and add deployment instructions.
-
----
-
-If you want, I can also:
-- Add a short CONTRIBUTING.md and CODE_OF_CONDUCT.md
-- Create a small example `docs/` site or Storybook for components
-- Convert the existing app to Next.js (I can scaffold migration steps)
