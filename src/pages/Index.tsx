@@ -30,13 +30,26 @@ const Index = () => {
     categories: [],
   });
 
-  // Load webinars
+  // Load webinars (Contentful if configured, otherwise local JSON fallback)
   useEffect(() => {
     const loadWebinars = async () => {
       try {
-        const response = await fetch("/data/webinars.json");
-        const data = await response.json();
-        setWebinars(data);
+        const spaceId = import.meta.env.VITE_CONTENTFUL_SPACE_ID;
+        const deliveryToken = import.meta.env.VITE_CONTENTFUL_DELIVERY_TOKEN;
+        if (spaceId && deliveryToken) {
+          console.log("Loading webinars from Contentful...");
+          // dynamic import to avoid bundling Contentful helper where unused
+          const mod = await import("@/lib/contentful");
+          const data = await mod.fetchContentfulWebinars();
+          setWebinars(data);
+
+          console.log(data);
+        } else {
+          console.log("Loading webinars from local JSON...");
+          const response = await fetch("/data/webinars.json");
+          const data = await response.json();
+          setWebinars(data);
+        }
       } catch (error) {
         console.error("Failed to load webinars:", error);
       } finally {
