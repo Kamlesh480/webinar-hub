@@ -1,0 +1,253 @@
+[
+  {
+    "id": "wbnr-001",
+    "slug": "governance-at-scale-introduction",
+    "title": "Governance at Scale: Patterns & Playbooks",
+    "description": "Best practices to scale governance across teams using Atlan. Covers policy automation and real-world case studies.",
+    "ai_summary": "A concise playbook for scaling governance across teams — covers automation, policy templates, and three customer use cases.",
+    "duration_minutes": 42,
+    "date_published": "2025-03-10",
+    "topics": ["Data Governance", "Policy Automation", "Use Cases"],
+    "thumbnail_url": "https://images.unsplash.com/photo-1551434678-e076c223a692?w=560&h=315&fit=crop",
+    "video_url": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    "authors": [
+      { "name": "Sarah Patel", "avatar_url": "https://api.dicebear.com/7.x/avataaars/svg?seed=Sarah", "role": "Solutions Architect" }, 
+      { "name": "Mike Chen", "avatar_url": "https://api.dicebear.com/7.x/avataaars/svg?seed=Mike", "role": "Senior Engineer" }
+    ],
+    "featured": true,
+    "popularity_score": 88,
+    "is_new": false,
+    "type": "past",
+    "integration_tags": ["Snowflake", "BigQuery"],
+    "what_brings_you_here": ["Getting Started", "Performance & Scale"]
+  },
+  {
+    "id": "wbnr-002",
+    "slug": "cataloging-modern-data-stack",
+    "title": "Cataloging in the Modern Data Stack",
+    "description": "How a modern data catalog accelerates discovery and trust across analytics teams.",
+    "ai_summary": "Explains cataloging patterns that enable discovery and trust, with implementation tips for analytics teams.",
+    "duration_minutes": 31,
+    "date_published": "2025-01-28",
+    "topics": ["Data Catalog", "Discovery", "Metadata"],
+    "thumbnail_url": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=560&h=315&fit=crop",
+    "video_url": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    "authors": [
+      { "name": "Mike Johnson", "avatar_url": "https://api.dicebear.com/7.x/avataaars/svg?seed=Mike", "role": "Product Manager" }
+    ],
+    "featured": false,
+    "popularity_score": 72,
+    "is_new": false,
+    "type": "past",
+    "integration_tags": ["Airflow", "dbt"],
+    "what_brings_you_here": ["Explore Features", "Getting Started"]
+  },
+  {
+    "id": "wbnr-003",
+    "slug": "real-time-quality-monitoring",
+    "title": "Real-Time Data Quality Monitoring with Atlan",
+    "description": "Demonstration of streaming data quality checks and alerting patterns for operational analytics.",
+    "ai_summary": "Demonstrates streaming quality checks and alert patterns to keep pipelines healthy.",
+    "duration_minutes": 18,
+    "date_published": "2025-04-01",
+    "topics": ["Data Quality", "Streaming", "Observability"],
+    "thumbnail_url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=560&h=315&fit=crop",
+    "video_url": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    "authors": [
+      { "name": "Aisha Khan", "avatar_url": "https://api.dicebear.com/7.x/avataaars/svg?seed=Aisha", "role": "Data Engineer" }
+    ],
+    "featured": false,
+    "popularity_score": 65,
+    "is_new": true,
+    "type": "past",
+    "integration_tags": ["Kafka", "Redshift"],
+    "what_brings_you_here": ["Performance & Scale", "Explore Features"]
+  },
+  {
+    "id": "wbnr-004",
+    "slug": "data-lineage-visualized",
+    "title": "Data Lineage Visualized: Build Trust in Pipelines",
+    "description": "Techniques to visualize lineage for debugging and compliance. Includes a demo with Atlan lineage features.",
+    "ai_summary": "Shows lineage visualization techniques to speed debugging and satisfy compliance needs.",
+    "duration_minutes": 54,
+    "date_published": "2024-12-15",
+    "topics": ["Data Lineage", "Compliance", "Debugging"],
+    "thumbnail_url": "https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=560&h=315&fit=crop",
+    "video_url": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    "authors": [
+      { "name": "Ravi Singh", "avatar_url": "https://api.dicebear.com/7.x/avataaars/svg?seed=Ravi", "role": "Principal Engineer" },
+      { "name": "Lisa Rodriguez", "avatar_url": "https://api.dicebear.com/7.x/avataaars/svg?seed=Lisa", "role": "Compliance Lead" }
+    ],
+    "featured": true,
+    "popularity_score": 92,
+    "is_new": false,
+    "type": "past",
+    "integration_tags": ["Salesforce", "S3"],
+    "what_brings_you_here": ["Getting Started", "Explore Features"]
+  },
+  {
+    "id": "wbnr-005",
+    "slug": "integrations-and-connectivity",
+    "title": "Integrations & Connectivity: Connectors Deep-dive",
+    "description": "Deep-dive into Atlan connectors and best practices for source-to-destination pipelines.",
+    "ai_summary": "Connector deep-dive showing best practices for source-destination pipelines and common pitfalls.",
+    "duration_minutes": 28,
+    "date_published": "2025-02-18",
+    "topics": ["Integrations", "Connectors", "ETL"],
+    "thumbnail_url": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=560&h=315&fit=crop",
+    "video_url": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    "authors": [
+      { "name": "Nina Verma", "avatar_url": "https://api.dicebear.com/7.x/avataaars/svg?seed=Nina", "role": "Integration Specialist" },
+      { "name": "Tom Wilson", "avatar_url": "https://api.dicebear.com/7.x/avataaars/svg?seed=Tom", "role": "DevOps Engineer" }
+    ],
+    "featured": false,
+    "popularity_score": 79,
+    "is_new": false,
+    "type": "past",
+    "integration_tags": ["MySQL", "Postgres"],
+    "what_brings_you_here": ["Data Migration", "Explore Features"]
+  },
+  {
+    "id": "wbnr-006",
+    "slug": "upcoming-product-roadmap",
+    "title": "Upcoming Product Roadmap — Live Preview",
+    "description": "An upcoming live session where we preview features shipping in the next quarter.",
+    "ai_summary": "Preview of the product roadmap and upcoming features shipping next quarter.",
+    "duration_minutes": 60,
+    "date_published": "2025-11-20",
+    "topics": ["Product", "Roadmap"],
+    "thumbnail_url": "https://images.unsplash.com/photo-1519389950473-47ba0277781c?w=560&h=315&fit=crop",
+    "video_url": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    "authors": [
+      { "name": "Emma Roberts", "avatar_url": "https://api.dicebear.com/7.x/avataaars/svg?seed=Emma", "role": "Head of Product" },
+      { "name": "Alex Kumar", "avatar_url": "https://api.dicebear.com/7.x/avataaars/svg?seed=Alex", "role": "VP Engineering" }
+    ],
+    "featured": true,
+    "popularity_score": 55,
+    "is_new": true,
+    "type": "upcoming",
+    "integration_tags": [],
+    "what_brings_you_here": ["Explore Features", "Getting Started"],
+    "learning_outcomes": [
+      "Upcoming AI-powered features and their practical applications",
+      "Enhanced collaboration tools for distributed teams",
+      "New integration capabilities with modern data platforms",
+      "Performance improvements and scalability enhancements"
+    ]
+  },
+  {
+    "id": "wbnr-007",
+    "slug": "ai-powered-metadata",
+    "title": "AI-Powered Metadata Management",
+    "description": "Leverage AI to automatically tag, classify, and enrich your data assets with smart metadata.",
+    "ai_summary": "AI-driven approach to automate metadata enrichment and improve data discoverability.",
+    "duration_minutes": 35,
+    "date_published": "2025-03-25",
+    "topics": ["AI", "Metadata", "Automation"],
+    "thumbnail_url": "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=560&h=315&fit=crop",
+    "video_url": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    "authors": [
+      { "name": "Emma Chen", "avatar_url": "https://api.dicebear.com/7.x/avataaars/svg?seed=Emma", "role": "AI Product Lead" },
+      { "name": "Marcus Brown", "avatar_url": "https://api.dicebear.com/7.x/avataaars/svg?seed=Marcus", "role": "ML Engineer" },
+      { "name": "Sophie Liu", "avatar_url": "https://api.dicebear.com/7.x/avataaars/svg?seed=Sophie", "role": "Data Scientist" }
+    ],
+    "featured": true,
+    "popularity_score": 85,
+    "is_new": false,
+    "type": "past",
+    "integration_tags": ["OpenAI", "Azure"],
+    "what_brings_you_here": ["Explore Features", "Performance & Scale"]
+  },
+  {
+    "id": "wbnr-008",
+    "slug": "security-best-practices",
+    "title": "Data Security & Access Control Best Practices",
+    "description": "Comprehensive guide to implementing role-based access control and data security in your data platform.",
+    "ai_summary": "Security playbook covering RBAC implementation, access patterns, and compliance frameworks.",
+    "duration_minutes": 45,
+    "date_published": "2025-02-05",
+    "topics": ["Security", "Access Control", "Compliance"],
+    "thumbnail_url": "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=560&h=315&fit=crop",
+    "video_url": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    "authors": [
+      { "name": "James Martinez", "avatar_url": "https://api.dicebear.com/7.x/avataaars/svg?seed=James", "role": "Security Architect" }
+    ],
+    "featured": false,
+    "popularity_score": 78,
+    "is_new": false,
+    "type": "past",
+    "integration_tags": ["Okta", "AWS"],
+    "what_brings_you_here": ["Getting Started", "Performance & Scale"]
+  },
+  {
+    "id": "wbnr-009",
+    "slug": "migration-strategies",
+    "title": "Cloud Migration Strategies for Data Platforms",
+    "description": "Learn proven strategies for migrating legacy data systems to modern cloud infrastructure with minimal downtime.",
+    "ai_summary": "Migration playbook with phased approach, risk mitigation, and real customer migration stories.",
+    "duration_minutes": 50,
+    "date_published": "2024-11-20",
+    "topics": ["Cloud Migration", "Infrastructure", "Best Practices"],
+    "thumbnail_url": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=560&h=315&fit=crop",
+    "video_url": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    "authors": [
+      { "name": "David Kim", "avatar_url": "https://api.dicebear.com/7.x/avataaars/svg?seed=David", "role": "Cloud Architect" },
+      { "name": "Rachel Green", "avatar_url": "https://api.dicebear.com/7.x/avataaars/svg?seed=Rachel", "role": "Migration Specialist" }
+    ],
+    "featured": false,
+    "popularity_score": 70,
+    "is_new": false,
+    "type": "past",
+    "integration_tags": ["GCP", "Azure", "AWS"],
+    "what_brings_you_here": ["Data Migration", "Performance & Scale"]
+  },
+  {
+    "id": "wbnr-010",
+    "slug": "data-mesh-architecture",
+    "title": "Implementing Data Mesh Architecture",
+    "description": "Explore data mesh principles and learn how to implement domain-driven data architecture at scale.",
+    "ai_summary": "Data mesh fundamentals with practical implementation patterns for decentralized data ownership.",
+    "duration_minutes": 55,
+    "date_published": "2025-01-10",
+    "topics": ["Data Mesh", "Architecture", "Domain-Driven Design"],
+    "thumbnail_url": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=560&h=315&fit=crop",
+    "video_url": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    "authors": [
+      { "name": "Lisa Anderson", "avatar_url": "https://api.dicebear.com/7.x/avataaars/svg?seed=Lisa", "role": "Enterprise Architect" }
+    ],
+    "featured": false,
+    "popularity_score": 82,
+    "is_new": false,
+    "type": "past",
+    "integration_tags": ["Kafka", "Kubernetes"],
+    "what_brings_you_here": ["Getting Started", "Explore Features"]
+  },
+  {
+    "id": "wbnr-011",
+    "slug": "data-quality-workshop",
+    "title": "Data Quality Workshop: Building Trust in Your Data",
+    "description": "Join us for an interactive workshop on establishing data quality frameworks and monitoring systems.",
+    "ai_summary": "This webinar has not aired yet.",
+    "duration_minutes": 90,
+    "date_published": "2025-12-05",
+    "topics": ["Data Quality", "Workshop", "Best Practices"],
+    "thumbnail_url": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=560&h=315&fit=crop",
+    "video_url": "https://www.youtube.com/embed/dQw4w9WgXcQ",
+    "authors": [
+      { "name": "Patricia Wong", "avatar_url": "https://api.dicebear.com/7.x/avataaars/svg?seed=Patricia", "role": "Quality Assurance Lead" },
+      { "name": "Kevin Smith", "avatar_url": "https://api.dicebear.com/7.x/avataaars/svg?seed=Kevin", "role": "Data Platform Engineer" }
+    ],
+    "featured": false,
+    "popularity_score": 60,
+    "is_new": true,
+    "type": "upcoming",
+    "integration_tags": ["Great Expectations", "dbt"],
+    "what_brings_you_here": ["Performance & Scale", "Getting Started"],
+    "learning_outcomes": [
+      "How to define and measure data quality metrics",
+      "Setting up automated quality checks and alerting",
+      "Building a data quality dashboard and reporting system",
+      "Best practices for data quality governance"
+    ]
+  }
+]
