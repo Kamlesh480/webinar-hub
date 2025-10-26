@@ -1,6 +1,7 @@
 import { useEffect, useState, useRef } from "react";
 import { useParams, useNavigate } from "react-router-dom";
 import { Webinar } from "@/types/webinar";
+import { useBookmarks } from "@/hooks/useBookmarks";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import { Button } from "@/components/ui/button";
@@ -20,10 +21,10 @@ const WebinarDetail = () => {
   const [loading, setLoading] = useState(true);
   const [showEmailGate, setShowEmailGate] = useState(false);
   const [hasAccess, setHasAccess] = useState(false);
-  const [isBookmarked, setIsBookmarked] = useState(false);
   const [isGeneratingAiSummary, setIsGeneratingAiSummary] = useState(false);
   const [showAiSummary, setShowAiSummary] = useState(false);
   const summaryRef = useRef<HTMLDivElement>(null);
+  const { isBookmarked, toggleBookmark } = useBookmarks();
 
   useEffect(() => {
     const params = new URLSearchParams(window.location.search);
@@ -80,8 +81,11 @@ const WebinarDetail = () => {
   };
 
   const handleBookmark = () => {
-    setIsBookmarked(!isBookmarked);
-    toast.success(isBookmarked ? "Removed from bookmarks" : "Added to bookmarks");
+    if (webinar) {
+      const currentlyBookmarked = isBookmarked(webinar.id);
+      toggleBookmark(webinar.id);
+      toast.success(currentlyBookmarked ? "Removed from bookmarks" : "Added to bookmarks");
+    }
   };
 
   const handleShare = async () => {
@@ -196,7 +200,10 @@ const WebinarDetail = () => {
 
                 <div className="flex items-center space-x-2">
                   <Button variant="outline" size="sm" onClick={handleBookmark}>
-                    <Bookmark className={`h-4 w-4 ${isBookmarked ? "fill-current" : ""}`} />
+                    <Bookmark 
+                      className={`h-4 w-4 ${webinar && isBookmarked(webinar.id) ? "fill-current" : ""}`}
+                      aria-label={webinar && isBookmarked(webinar.id) ? "Remove from bookmarks" : "Add to bookmarks"}
+                    />
                   </Button>
                   <Button variant="outline" size="sm" onClick={handleShare}>
                     <Share2 className="h-4 w-4" />

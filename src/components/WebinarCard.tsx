@@ -3,8 +3,8 @@ import { Clock, Calendar, Bookmark, Share2, Play, Sparkles } from "lucide-react"
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
 import { toast } from "sonner";
+import { useBookmarks } from "@/hooks/useBookmarks";
 
 interface WebinarCardProps {
   webinar: Webinar;
@@ -12,7 +12,7 @@ interface WebinarCardProps {
 
 const WebinarCard = ({ webinar }: WebinarCardProps) => {
   const navigate = useNavigate();
-  const [isBookmarked, setIsBookmarked] = useState(false);
+  const { isBookmarked, toggleBookmark } = useBookmarks();
 
   const navigateToDetail = (path: string) => {
     window.scrollTo(0, 0);
@@ -21,8 +21,8 @@ const WebinarCard = ({ webinar }: WebinarCardProps) => {
 
   const handleBookmark = (e: React.MouseEvent) => {
     e.stopPropagation();
-    setIsBookmarked(!isBookmarked);
-    toast.success(isBookmarked ? "Removed from bookmarks" : "Added to bookmarks");
+    toggleBookmark(webinar.id);
+    toast.success(isBookmarked(webinar.id) ? "Removed from bookmarks" : "Added to bookmarks");
   };
 
   const handleShare = async (e: React.MouseEvent) => {
@@ -152,7 +152,7 @@ const WebinarCard = ({ webinar }: WebinarCardProps) => {
               className="h-8 w-8 p-0"
               onClick={handleBookmark}
             >
-              <Bookmark className={`h-4 w-4 ${isBookmarked ? "fill-current" : ""}`} />
+              <Bookmark className={`h-4 w-4 ${isBookmarked(webinar.id) ? "fill-current" : ""}`} />
             </Button>
             <Button
               variant="ghost"

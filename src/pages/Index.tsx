@@ -10,6 +10,7 @@ import WebinarCard from "@/components/WebinarCard";
 import WebinarSkeleton from "@/components/WebinarSkeleton";
 import Pagination from "@/components/Pagination";
 import WhatBringsYouHere from "@/components/WhatBringsYouHere";
+import BookmarkedWebinars from "@/components/BookmarkedWebinars";
 import { Webinar, FilterState } from "@/types/webinar";
 
 const ITEMS_PER_PAGE = 9;
@@ -205,7 +206,7 @@ const Index = () => {
         <HeroSection featuredWebinars={featuredWebinars} />
 
         {/* What Brings You Here Section */}
-        <WhatBringsYouHere
+                <WhatBringsYouHere
           allCategories={allCategories}
           onCategorySelect={(category) => {
             setFilters({
@@ -217,7 +218,7 @@ const Index = () => {
         />
 
         {/* Main Content */}
-        <section className="container mx-auto px-4 py-12" id="webinar-cards">
+        <section className="container mx-auto px-4 py-12 pb-0" id="webinar-cards">
           <Tabs value={activeTab} onValueChange={(v) => setActiveTab(v as typeof activeTab)} className="space-y-8">
             {/* Tabs and View Toggle */}
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-4">
@@ -299,6 +300,11 @@ const Index = () => {
             </TabsContent>
           </Tabs>
         </section>
+
+        <section className="container mx-auto px-4 py-12" id="webinar-cards">
+         <BookmarkedWebinars allWebinars={webinars} viewMode={viewMode} />           
+        </section>
+ 
       </main>
 
       <Footer />
